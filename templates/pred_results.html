@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAFLD-PRED: Prediction Results</title>
+    <link rel="stylesheet" href="../static/results_page_style.css">
+</head>
+<body>
+    <div class="background">
+        <header>
+            <div class="container">
+                <img src="../static/logos/liver_image.png" alt="Liver Icon" class="logo">
+                <h1>NAFLD-PRED</h1>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Predict NAFLD</a></li>
+                <li><a href="#">What is NAFLD?</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1>Prediction Results</h1>
+            <div class="confidence-progress">
+                <div id="progress-bar">
+                    {{ confidence_score }}% Confidence
+                </div>
+            </div>
+            
+            <div class="results-container">
+                {% if predictions['Gradient Boosting'] == 1 %}
+                <p style="font-size: 24px;">According to {{ at_risk_count }}/4 Models, you have a <span class="at-risk">{{ confidence_score }}%</span> chance that you are <span class="at-risk">AT RISK</span> of having NAFLD.</p>
+                <div class="treatment-details">
+                    <h3>Basic Treatment for NAFLD:</h3>
+                    <p>1. Lifestyle changes such as diet and exercise.</p>
+                    <p>2. Weight loss if you are overweight or obese.</p>
+                    <p>3. Control of diabetes and high cholesterol if present.</p>
+                    <p>4. Avoiding alcohol and unnecessary medications.</p>
+                </div>
+                {% else %}
+                <p>According to {{ not_at_risk_count }}/4 Models, you are <span class="not-at-risk">NOT AT RISK</span> of having NAFLD.</p>
+                {% endif %}
+                <button onclick="toggleDetails()" class="btn">View Detailed Model Predictions</button>
+                <div id="details" style="display:none;">
+                    <p><strong>Random Forest Prediction:</strong> {% if predictions['Random Forest'] == 1 %}<span class="at-risk">At Risk of NAFLD</span>{% else %}<span class="healthy">Not At Risk/Healthy</span>{% endif %}</p>
+                    <p><strong>Decision Tree Prediction:</strong> {% if predictions['Decision Tree'] == 1 %}<span class="at-risk">At Risk of NAFLD</span>{% else %}<span class="healthy">Not At Risk/Healthy</span>{% endif %}</p>
+                    <p><strong>Logistic Regression Prediction:</strong> {% if predictions['Logistic Regression'] == 1 %}<span class="at-risk">At Risk of NAFLD</span>{% else %}<span class="healthy">Not At Risk/Healthy</span>{% endif %}</p>
+                    <p><strong>Gradient Boosting Prediction:</strong> {% if predictions['Gradient Boosting'] == 1 %}<span class="at-risk">At Risk of NAFLD</span>{% else %}<span class="healthy">Not At Risk/Healthy</span>{% endif %}</p>
+                    <hr>
+                    <p><strong>Average Prediction:</strong> {{ predictions['Average Prediction'] }}</p>
+                    <p><strong>Confidence Score:</strong> {{ predictions['Confidence Score'] * 100 }}%</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 NAFLD-PRED. All rights reserved.</p>
+                <p class="powered-by">
+                    Powered by: 
+                    <img src="../static/logos/python_logo.png" alt="Python" class="tech-logo">
+                    <img src="../static/logos/scikit_logo.png" alt="Scikit-learn" class="tech-logo">
+                    <img src="../static/logos/flask_logo.png" alt="Flask" class="tech-logo">
+                    <img src="../static/logos/js_logo.png" alt="JavaScript" class="tech-logo">
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function updateProgressBar(confidenceScore) {
+        var progressBar = document.getElementById('progress-bar');
+        progressBar.style.width = confidenceScore + '%';
+    }
+
+    // Calling the function with the confidence score
+    var confidenceScore = parseInt("{{ confidence_score }}");;
+    updateProgressBar(confidenceScore);
+
+    function toggleDetails() {
+        var details = document.getElementById('details');
+        if (details.style.display === 'none') {
+            details.style.display = 'block';
+        } else {
+             details.style.display = 'none';
+        }
+    }
+    </script>
+</body>
+</html>
+

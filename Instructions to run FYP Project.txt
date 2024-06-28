@@ -1,0 +1,27 @@
+Non-Alcoholic Fatty Liver Disease (NAFLD) Prediction System by Machine Learning Algorithms Using General Anthropometric Data and Basic Medical Tests
+Spring 2024
+	
+	By:
+	(1) Mashhood Ahmad Khan (FA20-BSI-048)
+	(2) Ali Hassan (FA20-BSI-006) 
+
+Instructions to Run Program:
+
+(1) Install Python 3.9 on your system from the Python website
+(2) Install Anaconda from the 
+(3) Install the Jupyter Notebook Extension for Visual Studio Code
+(4) Open the Project Folder in your Code Editor (Preferably Visual Studio Code)
+(5) Install the necessary dependencies:
+	(5a) Open the Code Editor Console by pressing Ctrl + `
+	(5b) Type in the following command in the Console and Press Enter:
+		pip install -r requirements.txt
+	(5c) Download the 'Live Server' Extension by Ritwick Dey from the 'Extensions' Tab at the left panel for your VS Code Editor
+(6) Change the file paths according to their paths on your system (You have to manually sift through the app.py code file and change their paths according to their presence in their specific folders on your system)
+(7) Open the Code Editor Console and type the following command to run the Flask backend and template engine:
+		python app.py
+(8) Open the index.html file and click on the 'Go Live' button at the bottom right of your Code Editor
+(9) The Interface will now open on your Web Browser
+
+
+
+	

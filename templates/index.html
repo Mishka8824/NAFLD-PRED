@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAFLD-PRED: Predict Risk of having NAFLD Disease</title>
+    <link rel="stylesheet" href="../static/interface_style.css">
+</head>
+<div class="background">
+<body>
+    <header>
+        <div class="container">
+            <img src="../static/logos/liver_image.png" alt="Liver Icon" class="logo">
+            <h1>NAFLD-PRED</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Predict NAFLD</a></li>
+            <li><a href="#">What is NAFLD?</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="welcome-message">
+            <h2>Welcome to NAFLD-PRED: Your go-to NAFLD Predictor in the comfort of your own home</h2>
+            <p>This tool uses machine learning algorithms to predict the likelihood of Non-Alcoholic Fatty Liver Disease (NAFLD) at the comfort of your home without the need for any intrusive medical operation. Please press the button below to predict whether you risk having NAFLD or learn more about NAFLD or NAFLD-PRED through our menu.</p>
+            <button id="predict-button">Press to Predict NAFLD</button>
+        </div>
+        <div id="form-container" class="hidden">
+            <form action="http://127.0.0.1:5000/predict" method="post">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required><br>
+                <label for="male">Gender:</label>
+                <select id="gender" name="male" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br>
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required><br>
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required><br>
+                <div class="bmi-container">
+                    <label for="bmi">BMI: <span id="bmi-result"></span></label>
+                    <input type="text" id="bmi" name="bmi" readonly>
+                </div>
+                <label for="c_h_o_l">Cholesterol Level (mg/dL):</label>
+                <input type="number" id="cholesterol" name="c_h_o_l" required><br>
+                <label for="s_b_p">Systolic Blood Pressure (mm Hg):</label>
+                <input type="number" id="sbp" name="s_b_p" required><br>
+                <label for="d_b_p">Diastolic Blood Pressure (mm Hg):</label>
+                <input type="number" id="dbp" name="d_b_p" required><br>
+                <label for="s_m_o_k_e">Do you smoke?</label>
+                <select id="smoking" name="s_m_o_k_e" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <button id="begin-prediction-button">Begin Prediction</button>
+            </form>
+        </div>
+        <div id="loading-spinner" class="loading-spinner" style="display: none;"></div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 NAFLD-PRED. All rights reserved.</p>
+            <p class="powered-by">
+                Powered by: 
+                <img src="../static/logos/python_logo.png" alt="Python" class="tech-logo">
+                <img src="../static/logos/scikit_logo.png" alt="Scikit-learn" class="tech-logo">
+                <img src="../static/logos/flask_logo.png" alt="Flask" class="tech-logo">
+                <img src="../static/logos/js_logo.png" alt="JavaScript" class="tech-logo">
+            </p>
+        </div>
+    </footer>
+
+    <section class="about-section">
+        <h2>About Us: </h3>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="../static/images/mashhood_pic.jpg" alt="Your Photo">
+                <div class="member-info">
+                    <h3>Mashhood Ahmad Khan</h3>
+                    <p>BS Bioinformatics</p>
+                    <p>Department of Biosciences</p>
+                    <p>COMSATS University Islamabad</p>
+                </div>
+            </div>
+            <div class="supervisor-info">
+                <h3>Supervisor:</h3>
+                <p>Dr. Khuram Shahzad</p>
+                <p>Assistant Professor</p>
+                <p>Department of Biosciences</p>
+                <p>COMSATS University Islamabad</p>
+            </div>
+            <div class="team-member">
+                <img src="../static/images/ali_pic.jpg" alt="Teammate's Photo">
+                <div class="member-info">
+                    <h3>Ali Hassan</h3>
+                    <p>BS Bioinformatics</p>
+                    <p>Department of Biosciences</p>
+                    <p>COMSATS University Islamabad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../interface_script.js"></script>
+</body>
+</html>
+

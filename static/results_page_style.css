@@ -1,0 +1,205 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #fff;
+}
+
+.background {
+    background-image: url('./images/backGround.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+}
+
+header {
+    background-color: rgba(26, 31, 185, 0.1); /* Transparent blue background for the header */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: left;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    position: relative; /* Ensure the header stays on top of the background image */
+    z-index: 1; /* Ensure the header stays on top of the background image */
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    margin-left: 15px;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background for the navbar */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #23259a;
+}
+
+main {
+    padding: 7rem;
+    text-align: center;
+    position: relative; /* Ensure the main content stays on top of the background image */
+    z-index: 1; /* Ensure the main content stays on top of the background image */
+}
+
+.results-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.3); /* Transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support for frosted glass effect */
+    text-align: left;
+}
+
+.results-container h2 {
+    color: #1a1fb9;
+}
+
+.results-container p {
+    color: #fff; 
+}
+
+.result {
+    margin: 20px 0;
+    padding: 10px;
+    border-left: 4px solid #4CAF50;
+    background-color: rgba(231, 249, 231, 0.8); /* Transparent green background */
+    text-align: left;
+}
+
+.result h3 {
+    margin: 0;
+    color: #4CAF50;
+}
+
+.nafld-detected {
+    color: red;
+}
+
+.healthy {
+    color: rgb(13, 206, 13);
+}
+
+.risk {
+    font-size: 1.2em;
+    color: #fff; 
+}
+
+.treatment-details h3 {
+    margin-top: 20px;
+    color: #45e04a;
+}
+
+.treatment-details p {
+    color: #fff; 
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background for the footer */
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0.5rem 1rem;
+}
+
+.powered-by {
+    display: flex;
+    align-items: center;
+}
+
+.tech-logo {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.custom-color p {
+    color: white;
+    font-size: 20px;
+}
+
+.at-risk {
+    color: red;
+    font-weight: bold;
+}
+
+.not-at-risk {
+    color: rgb(5, 255, 10);
+    font-weight: bold;
+}
+
+.confidence-progress {
+    width: 50%;
+    background-color: #f0f0f0;
+    height: 20px; 
+    margin-bottom: 20px; 
+    margin-left: 330px;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #4caf50; 
+    width: 0; /* Initial width, will be updated dynamically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color */
+    font-weight: bold; 
+}
+
+.btn {
+    background-color: #1a1fb9;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+

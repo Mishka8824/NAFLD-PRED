@@ -1,0 +1,259 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* font-size: 15px; */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #fff;
+    
+    
+}
+
+.background {
+    background-image: url('./images/backGround.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+}
+
+header {
+    background-color: rgba(26, 31, 185, 0.1); /* Transparent blue background for the header */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: left;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    position: relative; /* Ensure the header stays on top of the background image */
+    z-index: 1; /* Ensure the header stays on top of the background image */
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    margin-left: 15px;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background for the navbar */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #23259a;
+}
+
+main {
+    padding: 7rem;
+    text-align: left;
+    position: relative; /* Ensure the main content stays on top of the background image */
+    z-index: 1; /* Ensure the main content stays on top of the background image */
+}
+
+.welcome-message {
+    max-width: 600px;
+    margin: 0;
+    margin-top: -5rem;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slide-in 2s forwards;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.welcome-message h2 {
+    font-size: 2.5rem;
+    text-shadow: -1px -1px 0 #000,  
+                  1px -1px 0 #000,
+                  -1px 1px 0 #000,
+                  1px 1px 0 #000; /* Add borders using text-shadow */
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.welcome-message button, #begin-prediction-button {
+    background-color: #1a1fb9;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+.welcome-message button:hover, #begin-prediction-button:hover {
+    background-color: #161a95;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+#form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: left;
+    animation: reveal 1s forwards;
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.closed {
+    animation: slide-out 1s forwards;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 0.5rem 0 0.2rem 0;
+}
+
+input, select {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+@keyframes spinner {
+    to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #4CAF50;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spinner 1s linear infinite;
+    margin: 20px auto; 
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background for the footer */
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0.5rem 1rem;
+}
+
+.powered-by {
+    display: flex;
+    align-items: center;
+}
+
+.tech-logo {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.about-section {
+    background-color: #1a1fb9; /* Dark blue background */
+    color: #fff; /* White font color */
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.team-container {
+    display: flex; 
+    justify-content: center; /* Center the team members horizontally */
+}
+
+.team-member {
+    flex: 1; /* Make each team member take equal space */
+    margin: 20px; /* Add some margin for better spacing */
+    text-align: center; 
+}
+
+.team-member img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 auto 1rem;
+}
+
+.member-info {
+    margin-top: 1rem;
+}
+
+.supervisor-info {
+    flex: 1; /* Make the supervisor info take equal space */
+    margin: 20px; /* Add some margin for better spacing */
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
